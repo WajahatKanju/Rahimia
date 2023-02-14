@@ -1,0 +1,128 @@
+{% extends "_base.html" %} {% block title %} students List {% endblock %} 
+{% block search %}
+<form class="form-inline mt-2 mt-md-0" action="." method="GET">
+  <h2>Filter</h2>
+  <div class="row border border-3 p-2">
+
+    <div class="form-group col-3 my-2">
+      <label for="id_first_name">first name:</label>
+      <input type="text" name="first_name" class="form-control"  id="id_first_name">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_last_name">last name:</label>
+      <input type="text" name="last_name" class="form-control"  id="id_last_name">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_father_first_name">father first name:</label>
+      <input type="text" name="father_first_name" class="form-control"  id="id_father_first_name">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_father_last_name">father last name:</label>
+      <input type="text" name="father_last_name" class="form-control"  id="id_father_last_name">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_phone">Phone:</label>
+      <input type="tel" name="phone" class="form-control"  id="id_phone">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_cnic">CNIC:</label>
+      <input type="tel" name="cnic" class="form-control"  id="id_cnic">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_date_of_birth">date of birth:</label>
+      <input type="date" name="date_of_birth" class="form-control"  id="id_date_of_birth">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_date_of_registration">Date of Registration:</label>
+      <input type="date" name="date_of_registration" class="form-control"  id="id_date_of_registration">
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_province">halqa:</label>
+      <select name="province" class="form-control" id="id_province">
+<option value="66521570-25f9-4016-9c36-7d28ea0f4124">Khayber Pukhtoon Khwa</option>
+
+</select>
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_region">halqa:</label>
+      <select name="region" class="form-control" id="id_region">
+</select>
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_zone">Zone:</label>
+      <select name="zone" class="form-control" id="id_zone">
+</select>
+    </div>
+    
+    <div class="form-group col-3 my-2">
+      <label for="id_halqa">halqa:</label>
+      <select name="halqa" class="form-control" id="id_halqa">
+</select>
+    </div>
+    
+    <div class="form-group col-6 my-3">
+      <button class="btn btn-secondary w-50">Filter</button>
+    </div>
+  </div>
+</form>
+{% endblock search %}
+{% block content %}
+
+  {% if students %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NO.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Father Name</th>
+        <th scope="col">Phone Number</th>
+        <th scope="col">CNIC</th>
+        <th scope="col">Date OF Birth</th>
+        <th scope="col">Date Of Registration</th>
+
+        <th scope="col">Halqa</th>
+        <th scope="col">Zone</th>
+        <th scope="col">Region</th>
+        <th scope="col">Province</th>
+        <th scope="col">Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+      <p>{{ user.halqa }}</p> 
+      {% for student in students%}
+      <tr>
+        <th scope="row">{{ forloop.counter }}</th>
+        <td>{{ student.first_name }} {{ student.last_name}}</td>
+        <td>{{ student.father_first_name }} {{ student.father_last_name}}</td>
+        <td>{{ student.phone }}</td>
+        <td>{{ student.CNIC }}</td>
+        <td>{{ student.date_of_birth }}</td>
+        <td>{{ student.date_of_registration }}</td>
+
+        <td>{{ student.halqa }}</td>
+        <td>{{ student.halqa.zone }}</td>
+        <td>{{ student.halqa.zone.region }}</td>
+        <td>{{ student.halqa.zone.region.province }}</td>
+        <td>
+          <a class="btn btn-success" href="{{ student.get_absolute_url }}"
+            >Profile</a
+          >
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+    <h4 class="text-center display-3">No Students was Found ...</h4>
+  {% endif %}
+{% endblock %}

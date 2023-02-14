@@ -1,0 +1,74 @@
+{% extends "base.html" %} {% load static %} {% block head %}
+<script src="{% static 'scripts/validation.js' %}" defer></script>
+{% endblock %} {% block title %}{{ title }}{% endblock %} 
+{% block main-content %}
+<h2 class="text-center">رجیسٹریشن</h2>
+<form action="#" class="form registration__form" method="POST">
+  {% csrf_token %}
+  <!-- <label for="Picture" class="picture"> <img id="theImage" src="{% static "images/generic.png"%}" alt=""> </label> -->
+  <div class="registration__form--container">
+    <!-- <input class="hidden" type="file" name="picture" id="Picture"> -->
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.first_name}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.last_name}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.father_first_name}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.father_last_name}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.date_of_birth}}
+    </div>
+    <!-- <div class="input-wrapper registration__form__wrapper">
+      {{ form.date_of_registration}}
+    </div> -->
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.CNIC}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.Phone}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.education}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.occupation}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.current_address}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.permanent_address}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.region}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.city}}
+    </div>
+    <div class="input-wrapper registration__form__wrapper">
+      {{ form.zone}}
+    </div>
+  <button type="submit" class="btn btn-primary submit d-block">Submit</button>
+  </div>
+</form>
+
+
+{% endblock %}
+{% block tables %}
+<div class="tables">
+  <h2>Provinces</h2>
+  <ul>
+    {% for province in data %}
+      <li>{{ province  }}</li>
+    {% endfor %}
+  </ul>
+  <hr>
+
+
+</div>
+{% endblock %}

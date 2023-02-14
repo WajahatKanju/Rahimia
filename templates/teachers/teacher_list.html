@@ -1,0 +1,42 @@
+{% extends "_base.html" %}
+
+{% block title %} teacher List {% endblock %}
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NO. </th>
+        <th scope="col">Reg NO. </th>
+        <th scope="col">Name</th>
+        <th scope="col">Father Name</th>
+        <th scope="col">CNIC</th>
+        <th scope="col">Date OF Birth</th>
+        <th scope="col">Date OF registration</th>
+
+        <th scope="col">Halqa</th>
+        <th scope="col">Zone</th>
+
+        <th scope="col">Profile</th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for teacher in teachers %}
+      <tr>
+        <th scope="row"> {{ forloop.counter }}</th>
+        <td>{{ teacher.registration_no }}</td>
+        <td>{{ teacher.first_name }} {{ teacher.last_name}}</td>
+        <td>{{ teacher.father_first_name }} {{ teacher.father_last_name}}</td>
+        <td>{{ teacher.CNIC }} </td>
+        <td>{{ teacher.date_of_birth }} </td>
+        <td>{{ teacher.date_of_registration }} </td>
+
+        <td>{{ teacher.halqa }}</td>
+        <td>{{ teacher.halqa.zone }}</td>
+
+        <td><a class="btn btn-success" href="{{ teacher.get_absolute_url }}">Profile</a> </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

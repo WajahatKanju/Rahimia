@@ -1,0 +1,82 @@
+{% extends "_base.html" %} {% block title %} Student {{ student.first_name }} {{
+student.last_name }} {% endblock %} {% block content %}
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-md-7">
+      <div class="card p-3 py-4">
+        <div class="text-center">
+          <img
+            src="{{ student.picture.url }}"
+            alt="Profile Picture"
+            width="100px"
+            class="rounded-circle"
+          />
+        </div>
+
+        <div class="mx-5 p-5">
+          <table class="table">
+            <tbody>
+              <tr>
+                <td><b>Name</b></td>
+                <td>
+                  {{ student.first_name}} {{ student.middle_name}} {{
+                  student.last_name }}
+                </td>
+              </tr>
+              <tr>
+                <td><b>Father Name</b></td>
+                <td>
+                  {{ student.father_first_name}} {{ student.father_middle_name}}
+                  {{ student.father_last_name }}
+                </td>
+              </tr>
+              <tr>
+                <td><b>Date Of Birth</b></td>
+                <td>{{student.date_of_birth}}</td>
+              </tr>
+              <tr>
+                <td><b>Date Of registration</b></td>
+                <td>{{student.date_of_registration}}</td>
+              </tr>
+              <tr>
+                <td><b>CNIC</b></td>
+                <td>{{student.CNIC}}</td>
+              </tr>
+              <tr>
+                <td><b>CNIC Picture</b></td>
+                <td>
+                  <img
+                    src="{{student.CNIC_picture.url}} "
+                    width="350"
+                    alt="cnic pic"
+                  />
+                </td>
+              </tr>
+              <tr>
+                <td><b>Phone</b></td>
+                <td>{{student.phone}}</td>
+              </tr>
+              <tr>
+                <td><b>education</b></td>
+                <td>{{student.education}}</td>
+              </tr>
+              <tr>
+                <td><b>Occupation</b></td>
+                <td>{{student.occupation}}</td>
+              </tr>
+              <tr>
+                <td><b>current Address</b></td>
+                <td>{{student.current_address}}</td>
+              </tr>
+              <tr>
+                <td><b>Permanent Address</b></td>
+                <td>{{student.permanent_address}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

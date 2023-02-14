@@ -1,0 +1,51 @@
+{% extends "_base.html" %}
+{% block title %} teacher {{ teacher.first_name }} {{ teacher.last_name }} {% endblock %}
+{% block content %}
+<div class="container mt-5">
+    
+    <div class="row d-flex justify-content-center">
+        
+        <div class="col-md-7">
+            
+            <div class="card p-3 py-4">
+                
+                <div class="mx-5 p-5">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td><b>Registration No</b></td>
+                                <td>{{teacher.registration_no}}</td>
+                            </tr>    
+                            <tr>
+                                <td><b>Name</b></td>
+                                <td>{{ teacher.first_name}} {{ teacher.middle_name}} {{ teacher.last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Father Name</b></td>
+                                <td>{{ teacher.father_first_name}} {{ teacher.father_middle_name}} {{ teacher.father_last_name }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Date Of Birth</b></td>
+                                <td>{{teacher.date_of_birth}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Date Of Registration</b></td>
+                                <td>{{ teacher.date_of_registration }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>CNIC</b></td>
+                                <td>{{teacher.CNIC}}</td>
+                            </tr>
+                       
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</div>
+{% endblock %}

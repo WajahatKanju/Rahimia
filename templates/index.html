@@ -1,0 +1,20 @@
+{% extends '_base.html' %} 
+{% load static %}
+{% block title %}
+  Home
+{% endblock title %}
+{% block content %}
+  {% if  user.is_superuser %}
+    <h2 class="bg-danger p-2 display-4 text-white rounded">Warning: You are logged in As <b class="text-warning"> Superuser </b> </h2>
+  {% endif %}
+  <h1 class="display-1">Homepage</h1>
+  {% if user.is_authenticated %}
+    <b style="font-family: sans-serif; font-size: 1.5rem"
+      >Welcome {{ user.username }}!
+    </b>
+    <br />
+
+  {% else %}
+    <p>You are not logged in</p>
+  {% endif %} 
+{% endblock content %}

@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block title %} Books {% endblock %}
+
+{% block content %}
+    <div class="row">
+
+    {% for book in books %}
+        <div class="col m-3">
+            <div class="card" style="width: 18rem;">
+                <a class="urdu text-decoration-none" href="{{ book.get_absolute_url }}">
+                    <img src="{{ book.picture.url }}" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title text-success">{{ book.title }}</h5>
+                    </div>
+                </a>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
