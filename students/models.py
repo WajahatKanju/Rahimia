@@ -1,7 +1,7 @@
 import uuid
 
 from django.db import models
-# from administrative_division.models import Halqa
+from administrative_divisions.models import Halqa
 from django.urls import reverse
 
 
@@ -37,7 +37,7 @@ class Student(models.Model):
     current_address = models.CharField(max_length=300)
     permanent_address = models.CharField(max_length=300)
 
-    # halqa = models.ForeignKey(Halqa, on_delete=models.CASCADE, default=None)
+    halqa = models.ForeignKey(Halqa, on_delete=models.CASCADE, default=None)
     
 
     def __str__(self) -> str:

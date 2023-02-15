@@ -55,8 +55,8 @@ INSTALLED_APPS = [
     
 
     # ? Local 
-    # 'administrative_division.apps.AdministrativeDivisionConfig',
-    # 'users.apps.UsersConfig',
+    'administrative_divisions.apps.AdministrativeDivisionsConfig',
+    'users.apps.UsersConfig',
     'students.apps.StudentsConfig',
     # 'books.apps.BooksConfig',
     'pages.apps.PagesConfig',
@@ -105,7 +105,7 @@ TEMPLATES = [
 
 ROOT_URLCONF = 'rahimia.urls'
 WSGI_APPLICATION = 'rahimia.wsgi.application' # ? CHANGES REQUIRED
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = 'users.User'
 
 
 # Database
