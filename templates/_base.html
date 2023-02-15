@@ -40,7 +40,12 @@
            
 
             {% if user.is_authenticated %}
-        
+            <li class="nav-item p-2">
+              <a class="nav-link" href="{% url 'teacher_list' %}">Teachers</a>
+            </li>
+            <li class="nav-item p-2">
+              <a class="nav-link" href="{% url 'student_list' %}">Students</a>
+            </li>
             <li class="nav-item p-2">
               <a class="btn btn-outline-danger" href="{% url 'account_logout' %}">Logout</a>
             </li>

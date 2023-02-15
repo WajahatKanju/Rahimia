@@ -60,8 +60,8 @@ INSTALLED_APPS = [
     'students.apps.StudentsConfig',
     # 'books.apps.BooksConfig',
     'pages.apps.PagesConfig',
-    # 'teachers.apps.TeachersConfig',
-    # 'study_class.apps.StudyClassConfig'
+    'teachers.apps.TeachersConfig',
+    'study_class.apps.StudyClassConfig'
 ]
 PASSWORD_HASHERS = [
     'django.contrib.auth.hashers.Argon2PasswordHasher',
