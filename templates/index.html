@@ -5,7 +5,7 @@
 {% endblock title %}
 {% block content %}
   {% if  user.is_superuser %}
-    <h2 class="bg-danger p-2 display-4 text-white rounded">Warning: You are logged in As <b class="text-warning"> Superuser </b> </h2>
+    <h2 class="bg-secondary p-2 display-4 text-white rounded">Warning: You are logged in As  UPDATED<b class="text-warning"> Superuser </b> </h2>
   {% endif %}
   <h1 class="display-1">Homepage</h1>
   {% if user.is_authenticated %}
