@@ -72,3 +72,7 @@ class Halqa(models.Model):
 
     def __str__(self) -> str:
         return self.name
+
+
+class Responsibility(models.Model):
+    pass

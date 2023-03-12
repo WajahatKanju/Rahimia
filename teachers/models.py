@@ -27,11 +27,12 @@ class Teacher(models.Model):
     
     date_of_birth = models.DateField()
     date_of_registration = models.DateField()
+    date_of_appointment = models.DateField()
+
 
     CNIC = models.CharField(max_length=13)
     halqa = models.ForeignKey(Halqa, on_delete=models.CASCADE)
     quality = models.CharField(max_length=100)
-    reason = models.CharField(max_length=255)
 
 
     def __str__(self) -> str:
@@ -40,3 +41,6 @@ class Teacher(models.Model):
     def get_absolute_url(self):
         return reverse('teacher_detail', args=[str(self.id)])
     
+
+class Sectrary(Teacher):
+    pass

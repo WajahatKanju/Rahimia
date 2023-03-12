@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Student
+from .models import Student, Evaluation_A, Evaluation_B, Evaluation_C
 
 
 @admin.register(Student)
@@ -12,3 +12,7 @@ class StudentAdmin(admin.ModelAdmin):
       form.base_fields['first_name'].disabled = True    
     return form
 
+
+admin.site.register(Evaluation_A)
+admin.site.register(Evaluation_B)
+admin.site.register(Evaluation_C)
